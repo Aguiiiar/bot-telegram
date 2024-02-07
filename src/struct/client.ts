@@ -7,11 +7,11 @@ import { existsSync, readdirSync } from "node:fs";
 export class Client extends Telegraf {
   constructor() {
     super(env.TELEGRAM_BOT_TOKEN);
-    this.loadCommands();
   }
 
   async launch() {
     await super.launch();
+    await this.loadCommands();
     console.log('[TELEGRAM] server started');
   }
 
